@@ -8,9 +8,8 @@ router.get('/', function (req, res) {
     Kitten.find(function (err, kittens) {
         if (err) return console.error(err);
         
-        res.render('kittens', { data: kittens });
+        res.render('array_view', { title: 'Kittens', data: kittens });
     })
-    //res.render('kittens', { data: ['test', 'test test', 'foo', 'bar'] });
 });
 
 module.exports = router;

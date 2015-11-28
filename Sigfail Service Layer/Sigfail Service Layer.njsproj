@@ -31,8 +31,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="models\comment.js" />
+    <Compile Include="models\dish.js" />
+    <Compile Include="models\image.js" />
     <Compile Include="models\kitten.js" />
+    <Compile Include="models\menu.js" />
     <Compile Include="routes\dates.js" />
+    <Compile Include="routes\dish.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\kittens.js" />
     <Compile Include="routes\users.js" />
@@ -42,7 +47,7 @@
     <Content Include="README.md" />
     <Content Include="views\date.jade" />
     <Content Include="views\index.jade" />
-    <Content Include="views\kittens.jade" />
+    <Content Include="views\array_view.jade" />
     <Content Include="views\layout.jade" />
     <Content Include="views\error.jade" />
   </ItemGroup>

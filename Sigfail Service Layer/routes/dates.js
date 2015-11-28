@@ -9,7 +9,7 @@ router.get('/', function (req, res) {
 
     console.log(path);
     console.log(date);
-    res.render('date', { date: date.toDateString() });
+    res.render('date', { title: "Date", date: date.toDateString() });
 });
 
 module.exports = router;
