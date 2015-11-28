@@ -11,8 +11,8 @@ var dishSchema = new mongoose.Schema({
         employee: Number,
         guest: Number
     },
-    comments: [Comment.schema],
-    images: [Image.schema]
+    comments: [{type: mongoose.Schema.ObjectId, ref: 'Comment'}],
+    images: [{ type: mongoose.Schema.ObjectId, ref: 'Image' }]
 });
 
 module.exports = mongoose.model('Dish', dishSchema);

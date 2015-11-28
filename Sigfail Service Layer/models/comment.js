@@ -1,11 +1,11 @@
 ﻿var mongoose = require('mongoose');
-var Image = require('./image.js');
 
-var commentSchema = new mongoose.Schema({
+var commentSchema = new mongoose.Schema( {
     user: String,
     text: String,
     rating: Number,
-    date: Date
+    date: Date,
+    image: { type: mongoose.Schema.ObjectId, ref: 'Image' }
 });
 
 module.exports = mongoose.model('Comment', commentSchema);

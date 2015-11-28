@@ -8,12 +8,12 @@ var Image = require('../models/image');
 
 /* GET home page. */
 router.get('/', function (req, res) {
-    var testComment = {
+    var testComment = new Comment({
         user: 'Hans',
         text: 'test lol',
         rating: 5.5,
         date: Date.now()
-    };
+    });
 
     var newDish = new Dish({
         name: 'Swagetti Yolonaise',
@@ -26,13 +26,20 @@ router.get('/', function (req, res) {
         }
     });
     
-    newDish.comments.push(testComment);
+    newDish.comments.push(testComment._id);
+    
+    testComment.save(function (err, fluffy) {
+        if (err) return console.error(err);
+    });
 
     newDish.save(function (err, fluffy) {
         if (err) return console.error(err);
     });
 
-    Dish.find(function (err, dishes) {
+    Dish
+    .find()
+    .populate('comments')
+    .exec(function (err, dishes) {
         if (err) return console.error(err);
         res.render('array_view', { title: 'Dishes', data: dishes });
     });
