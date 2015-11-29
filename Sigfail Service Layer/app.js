@@ -12,7 +12,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var dates = require('./routes/dates');
 var kittens = require('./routes/kittens');
-var dish = require('./routes/dish');
+var dishes = require('./routes/dishes');
 
 var app = express();
 
@@ -33,7 +33,7 @@ app.use('/', routes);
 app.use('/users', users);
 app.use(/\/[0-9]{4}\/[0-9]{2}\/[0-9]{2}/, dates);
 app.use('/kittens', kittens);
-app.use('/dish', dish);
+app.use('/dishes', dishes);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -1,8 +1,8 @@
 ﻿var mongoose = require('mongoose');
 
 var menuSchema = new mongoose.Schema({
-    date: Date,
-    location: string,
+    date: { type: Date, required: true },
+    location: { type: String, required: true },
     dishes: [{ type: mongoose.Schema.ObjectId, ref: 'Dish' }]
 });
 

@@ -1,10 +1,10 @@
 ﻿var mongoose = require('mongoose');
 
 var commentSchema = new mongoose.Schema( {
-    user: String,
-    text: String,
+    user: { type: String, required: true },
+    text: { type: String, required: true },
     rating: Number,
-    date: Date,
+    date: { type: Date, default: Date.now },
     image: { type: mongoose.Schema.ObjectId, ref: 'Image' }
 });
 
