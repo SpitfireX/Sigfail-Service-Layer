@@ -34,13 +34,11 @@
     <Compile Include="models\comment.js" />
     <Compile Include="models\dish.js" />
     <Compile Include="models\image.js" />
-    <Compile Include="models\kitten.js" />
     <Compile Include="models\menu.js" />
+    <Compile Include="routes\comments.js" />
     <Compile Include="routes\dates.js" />
     <Compile Include="routes\dishes.js" />
     <Compile Include="routes\index.js" />
-    <Compile Include="routes\kittens.js" />
-    <Compile Include="routes\users.js" />
     <Compile Include="bin\www" />
     <Content Include="package.json" />
     <Content Include="public\stylesheets\style.styl" />

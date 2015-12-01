@@ -28,13 +28,13 @@ router.get('/:dish_id', function (req, res) {
         if (err) {
             res.status(404);
             res.json({ message: "Invalid ID" });
-            console.error(err);
+            return console.error(err);
         } else if (dish === null) {
             res.status(404);
             res.json({ message: 'ID not found' });
-        } else {
-            res.json(dish);
+            return
         }
+        res.json(dish);
     });
 });
 
@@ -43,13 +43,13 @@ router.delete('/:dish_id', function (req, res) {
         if (err) {
             res.status(404);
             res.json({ message: "Invalid ID" });
-            console.error(err);
+            return console.error(err);
         } else if (dish === null) {
             res.status(404);
             res.json({ message: 'ID not found' });
-        } else {
-            res.json({ message: 'Successfully deleted' });
+            return
         }
+        res.json({ message: 'Successfully deleted' });
     });
 });
 
@@ -62,6 +62,10 @@ router.put('/:dish_id', function (req, res) {
             res.status(404);
             res.json({ message: "Invalid ID" });
             return console.log(err);
+        } else if (dish === null) {
+            res.status(404);
+            res.json({ message: 'ID not found' });
+            return
         }
 
         for (n in req.body) {
